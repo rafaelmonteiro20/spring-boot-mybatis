@@ -12,7 +12,7 @@ import com.rachinha.model.Jogador;
 @RestController
 @RequestMapping("/rest/jogadores")
 public class JogadoresResource {
-
+	
 	private JogadorMapper jogadorMapper;
 	
 	public JogadoresResource(JogadorMapper jogadorMapper) {
