@@ -15,6 +15,7 @@ public interface JogadorMapper {
 	@Select("select * from jogadores")
 	List<Jogador> findAll();
 	
+	@Select("select * from jogadores where id = #{id}")
 	Jogador findById(Integer id);
 
 	@Insert("insert into jogadores (nome, telefone) values (#{nome}, #{telefone});")

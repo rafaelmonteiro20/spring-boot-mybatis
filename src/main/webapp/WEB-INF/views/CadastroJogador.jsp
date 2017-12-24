@@ -21,7 +21,7 @@
 		</nav>
 
 		<div class="container">
-			<form class="form-horizontal" method="post" action="/jogadores">
+			<form class="form-horizontal" method="post" action="/jogadores/form">
 		    	<div class="panel panel-default">
 		    		<div class="panel-heading">
 		    			<div class="clearfix">
@@ -31,16 +31,20 @@
 		    		</div>
 		    		
 		    		<div class="panel-body">
+		    			<input type="hidden" value="${jogador.id}" />
+		    		
 						<div class="form-group">
 							<label for="nome" class="col-sm-2 control-label">Nome</label>
 							<div class="col-sm-4"> 
-								<input type="text" class="form-control" id="nome" name="nome" />
+								<input type="text" class="form-control" id="nome" 
+									name="nome" value="${jogador.nome}" />
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="telefone" class="col-sm-2 control-label">Telefone</label>
 							<div class="col-sm-2">   
-								<input type="text" class="form-control" id="telefone" name="telefone" />
+								<input type="text" class="form-control" id="telefone" 
+									name="telefone" value="${jogador.telefone}" />
 							</div>
 						</div>
 						<div class="form-group">
