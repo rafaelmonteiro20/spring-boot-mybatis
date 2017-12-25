@@ -13,7 +13,7 @@
 			    </div>
 			    		
 			    <div class="panel-body">
-			    	<input type="hidden" value="${jogador.id}" />
+			    	<input type="hidden" name="id" value="${jogador.id}" />
 			    		
 					<div class="form-group">
 						<label for="nome" class="col-sm-2 control-label">Nome</label>

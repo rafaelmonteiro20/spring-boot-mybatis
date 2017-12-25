@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.SelectKey;
+import org.apache.ibatis.annotations.Update;
 
 import com.rachinha.model.Jogador;
 
@@ -24,6 +25,8 @@ public interface JogadorMapper {
 			before = false, resultType = Integer.class)
 	void insert(Jogador jogador);
 
+	@Update("update jogadores set nome = #{nome}, telefone = #{telefone} "
+		  + "where id = #{id}")
 	void update(Jogador jogador);
 	
 	@Delete("delete from jogadores where id = #{id}")

@@ -12,6 +12,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.rachinha.mapper.JogadorMapper;
 import com.rachinha.model.Jogador;
+import com.rachinha.service.JogadorService;
 
 @Controller
 @RequestMapping("/jogadores")
@@ -19,6 +20,9 @@ public class JogadorController {
 
 	@Autowired
 	private JogadorMapper jogadorMapper;
+	
+	@Autowired
+	private JogadorService service;
 	
 	@GetMapping("/form")
 	public ModelAndView form(Jogador jogador) {
@@ -30,7 +34,7 @@ public class JogadorController {
 	@PostMapping("/form")
 	public String save(Jogador jogador, RedirectAttributes attributes) {
 		try {
-			jogadorMapper.insert(jogador);
+			service.save(jogador);
 			attributes.addFlashAttribute("mensagem", "Jogador salvo com sucesso!");
 			return "redirect:/jogadores";
 		} catch (Exception e) {
@@ -54,7 +58,7 @@ public class JogadorController {
 	
 	@DeleteMapping("/{id}")
 	public String excluir(@PathVariable Integer id, RedirectAttributes attributes) {
-		jogadorMapper.delete(id);
+		service.delete(id);
 		attributes.addFlashAttribute("mensagem", "Jogador excluído com sucesso!");
 		return "redirect:/jogadores";
 	}

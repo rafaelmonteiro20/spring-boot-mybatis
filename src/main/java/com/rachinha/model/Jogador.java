@@ -29,6 +29,10 @@ public class Jogador {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+	
+	public boolean isNovo() {
+		return id == null;
+	}
 
 	@Override
 	public int hashCode() {
