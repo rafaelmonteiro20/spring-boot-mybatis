@@ -40,7 +40,8 @@
 					   				<span class="glyphicon glyphicon-pencil"></span>
 					   			</a>
 					   						
-					   			<a class="btn btn-link btn-xs"
+					   			<a class="btn btn-link btn-xs" data-toggle="modal" data-target="#dialogoExclusao"
+					   				data-jogador-id="${jogador.id}" data-jogador-nome="${jogador.nome}"
 					   				title="Excluir" rel="tooltip" data-placement="top">
 					   				<span class="glyphicon glyphicon-remove"></span>
 					   			</a>
@@ -55,6 +56,30 @@
 					</c:if>
 				</tbody>
 			</table>
+		</div>
+	</div>
+
+	<div class="modal fade" id="dialogoExclusao" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<form method="POST" data-url-base="/jogadores" >
+				<input type="hidden" name="_method" value="DELETE">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title">Confirmação</h4>
+					</div>
+					<div class="modal-body">
+						<span>Deseja realmente excluir o jogador?</span>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+						<button type="submit" class="btn btn-primary">Excluir</button>
+					</div>
+				</div>
+			</form>
 		</div>
 	</div>
 </layout:pageTemplate>

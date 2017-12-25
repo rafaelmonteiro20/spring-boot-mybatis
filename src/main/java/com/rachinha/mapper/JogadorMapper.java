@@ -2,6 +2,7 @@ package com.rachinha.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -25,6 +26,7 @@ public interface JogadorMapper {
 
 	void update(Jogador jogador);
 	
+	@Delete("delete from jogadores where id = #{id}")
 	void delete(Integer id);
 	
 }
